@@ -24,7 +24,7 @@ mongoose
     console.log('DB connection succesful');
   });
 
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 const port = process.env.port || 3000;
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
@@ -37,3 +37,11 @@ process.on('unhandledRejection', (err) => {
     process.exit(1);
   });
 });
+
+// Heroku Stop Process Signal
+// process.on('SIGTERM', () => {
+//   console.log('SIGTERM RECIVED. Shutting down gracefully');
+//   server.close(() => {
+//     console.log('Process terminated!');
+//   });
+// });
