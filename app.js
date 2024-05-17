@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -27,6 +28,21 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // 1)GLOBAL MIDDLEWARES
+
+// Implement CORD / Access-Control-Allow-Origin */  Make API Accesible from other pages
+// Get post
+// app.use(cors());
+// Only allow one Origin Acces API
+// api.natours.com, natours.com
+// app.use(
+// cors({
+// origin: 'https://www.natours.com',
+// }),
+// );
+// Managing complex req, patch delete, put
+// app.options('*', cors());
+// Only one resource can be deleted or updated
+// app.options('/api/v1/tours/:id', cors())
 
 // Serving static files
 // app.use(express.static(`${__dirname}/public`));
