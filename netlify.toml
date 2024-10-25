@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+  functions = "netlify/functions"  # Update this if you use serverless functions
+
+[[redirects]]
+  from = "/static/*"
+  to = "/static/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"  # If you're using serverless for SSR, otherwise update to serve your `server.js`
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Custom-Toml = "Toml"
