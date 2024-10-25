@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm run build:js"
   publish = "public"
   functions = "netlify/functions"  # Update this if you use serverless functions
 
