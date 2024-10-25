@@ -1,12 +1,6 @@
 [build]
   command = "npm run build:js"
   publish = "public"
-  functions = "netlify/functions"  # Update this if you use serverless functions
-
-[[redirects]]
-  from = "/static/*"
-  to = "/static/:splat"
-  status = 200
 
 [[redirects]]
   from = "/*"
